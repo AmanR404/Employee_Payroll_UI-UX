@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Payroll</title>
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+        }
+        header{
+            display: flex;
+            margin-top: 20px;
+        }
+        #spancontainer{
+            display: flex;
+            flex-direction: column;
+            margin-left: 3px;
+        }
+        #span1{
+            color: rgb(21, 185, 21);
+        }
+        #span2{
+            color:grey
+        }
+        #spancontainer,img{
+            position: relative;
+            left: 150px;
+        }
+        form{
+            width: 50vw;
+            margin: auto;
+            margin-top: 20px;
+            border: 0.1px solid grey;
+            box-shadow: 1.5px 1.5px 1.5px 2.5px grey;
+            background-color: rgb(251, 250, 249);
+        }
+        #formcontainer{
+            margin : 25px 0px 25px 75px;
+        }
+        #text{
+            padding: 3px 20px;
+        }
+        #label1,#label2,#label3,#label4,#label5,#label6{
+            margin-right: 10px;
+        }
+        #notes{
+            padding: 20px 60px;
+        }
+        #employeespan{
+            position: relative;
+            left: 73px;
+            top: 10px;
+            font-size: large;
+        }
+        .btn{
+            position: relative;
+            left: 250px;
+            padding: 10px 25px;
+            background-color: rgb(227, 223, 223);
+            border: 0.5px solid grey;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+        .btn:hover{
+            cursor: pointer;
+            background-color: black;
+            color: white;
+        }
+        #img1{
+            position: relative;
+            left: 5px;
+            top: 9px;
+            width: 30px;
+            height: 30px;
+        }
+        #img2{
+            position: relative;
+            left: 3px;
+            top: 9px;
+            width: 33px;
+            height: 33px;
+        }
+        #img3{
+            position: relative;
+            left: 3px;
+            top: 10px;
+            width: 31px;
+            height: 31px;
+        }
+        #img4{
+            position: relative;
+            left: 3px;
+            top: 12px;
+            width: 31px;
+            height: 31px;
+        }
+        #profile,#profile1,#profile2,#profile3,#gender{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./assets/images/logo.png" alt="">
+
+        <div id="spancontainer">
+        <span id="span1"><b>EMPLOYEE</b></span>
+        <span id="span2"><b>PAYROLL</b></span>
+        </div>
+    </header>
+        <form action="">
+            <span id="employeespan"><b>Employee Payroll Form</b><br></span><br>
+            <div id="formcontainer">
+            <label for="text" id="label1">Name</label>
+            <input type="text" name="text" id="text"><br><br>
+            <label for="profile" id="label2">Profile image</label>
+            <input type="radio" name="profile" id="profile"><img src="./assets/profile-images/Ellipse -1.png" alt="" id="img1">
+            <input type="radio" name="profile" id="profile1"><img src="./assets/profile-images/Ellipse -2.png" alt="" id="img2">
+            <input type="radio" name="profile" id="profile2"><img src="./assets/profile-images/Ellipse -3.png" alt="" id="img3">
+            <input type="radio" name="profile" id="profile3"><img src="./assets/profile-images/Ellipse -4.png" alt="" id="img4"><br><br>
+            <label for="gender" id="label3">Gender</label>
+            <input type="radio" name="gender" id="gender"> Male
+            <input type="radio" name="gender" id="gender"> Female<br><br>
+            <label for="department" id="label4">Department</label>
+            <input type="checkbox" name="department" id="department"> HR
+            <input type="checkbox" name="department" id="department"> Sales
+            <input type="checkbox" name="department" id="department"> Finance
+            <input type="checkbox" name="department" id="department"> Others <br><br>
+            <label for="date" id="label5">Choose Date</label>
+            <input type="date" name="date" id="date"> <br><br>
+            <label for="notes" id="label6">Notes</label>
+            <input type="text" name="notes" id="notes"><br><br><br>
+    
+            <button class="btn" onclick="getData(),alert('Form submitted !')">Submit</button>
+            <button class="btn" onclick="alert('Form is Reset now')">Reset</button><br><br>
+            </div>
+        </form>
+        <script>
+            let employeeData = {
+                name : undefined,
+                gender : undefined,
+                department : undefined,
+                notes : undefined
+            }
+
+            getData = ()=>{
+                employeeData.name = document.querySelector('#text');
+                employeeData.gender = document.querySelector('#gender');
+                employeeData.department = document.querySelector('#department');
+                employeeData.notes = document.querySelector('#notes');
+            }
+        </script>
+</body>
+</html>
